@@ -1,0 +1,49 @@
+//This is a more robust script to find, activate, and modify the commented-out forms.
+
+// 1. Find the main content area of the page.
+const mainContent = document.querySelector('.mainContent');
+
+if (!mainContent) {
+  console.error('Error: Could not find the main content area. Script cannot continue.');
+} else {
+  // 2. Create a special walker to find ALL comment nodes within the main content area.
+  const commentWalker = document.createTreeWalker(mainContent, NodeFilter.SHOW_COMMENT, null, false);
+  let commentNode;
+  let found = false;
+
+  // 3. Loop through every comment it finds.
+  while (commentNode = commentWalker.nextNode()) {
+    // 4. Check if the comment contains the unique form name.
+    if (commentNode.textContent.includes('tf1_frmBackupSaveCurrentSettings')) {
+      console.log('Found the target comment. Activating it now...');
+      
+      // 5. Get the HTML text from inside the comment.
+      const hiddenHTML = commentNode.textContent;
+      
+      // 6. Insert the HTML as real elements right before the comment.
+      // This makes the forms part of the live DOM.
+      commentNode.parentElement.insertAdjacentHTML('beforebegin', hiddenHTML);
+      
+      // 7. NEW: Now that the form is live, find the specific input and modify its value.
+      const thisPageInput = document.querySelector('form[name="tf1_frmBackupRestoreSavedSettings"] input[name="thispage"]');
+      
+      if (thisPageInput) {
+        console.log('Found the target input. Changing its value to "factoryDefault.html"...');
+        thisPageInput.value = 'factoryDefault.html';
+      } else {
+        console.warn('Warning: The form was activated, but the specific input to modify was not found.');
+      }
+
+      // 8. Remove the original comment.
+      commentNode.remove();
+      
+      console.log('SUCCESS! The forms should now be visible and modified on the webpage.');
+      found = true;
+      break; // Exit the loop
+    }
+  }
+
+  if (!found) {
+    console.error('Error: Script finished but did not find the specific backup/restore comment.');
+  }
+}
