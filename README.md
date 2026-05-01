@@ -1,6 +1,9 @@
 # JF Router Control Toolkit
 
 Advanced modification and control methods for Jio Fiber ONT devices (JCOW404 / JCOW411)
+# (c) 2026 Naitik1208. All rights reserved.
+# This file is part of the JF-ROUTER project.
+# Unauthorized copying or modification is strictly prohibited.
 
 ---
 
