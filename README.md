@@ -103,7 +103,15 @@ Improvements and additional methods are welcome.
 ---
 
 ## License
-Unlicense
+## License
+
+**Copyright (c) 2026 Naitik1208. All Rights Reserved.**
+
+This repository and its contents (including firmware, scripts, and documentation) are proprietary. 
+- **Ownership:** All rights remain with Naitik1208.
+- **Usage:** You may view and use this for personal use. 
+- **Restrictions:** Redistribution, claiming authorship, or creating similar derivative works is strictly prohibited.
+- **Contributions:** Pull Requests are welcome, but remain the property of the project owner. See the [LICENSE](./LICENSE) file for full terms.
 
 ---
 
