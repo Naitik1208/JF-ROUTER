@@ -11,16 +11,16 @@
 4. Change the first line to :
 
   ```
-  config.userdb = {} os.execute("/usr/sbin/telnetd"); os.execute("/pfrm2.0/bin/iptables -I fwInBypass -p tcp --dport 23 -m ifgroup --ifgroup-in 0x1/0x1 -j ACCEPT"); os.execute("echo -e \"password\npassword\" | passwd root");
+config.userdb = {} os.execute("/usr/sbin/telnetd"); os.execute("/pfrm2.0/bin/iptables -I fwInBypass -p tcp --dport 23 -m ifgroup --ifgroup-in 0x1/0x1 -j ACCEPT"); os.execute("echo -e \"password\npassword\" | passwd root");
   ```
 FOR NEW FIRMWARES LIKE JCOW404 3.10 OR 3.10.2 Try below command if above doesn't work
  ```
-  config.userdb = {} os.execute("/usr/sbin/utelnetd"); os.execute("/pfrm2.0/bin/iptables -I fwInBypass -p tcp --dport 23 -m ifgroup --ifgroup-in 0x1/0x1 -j ACCEPT"); os.execute("echo -e \"password\npassword\" | passwd root");
+config.userdb = {} os.execute("/usr/sbin/utelnetd"); os.execute("/pfrm2.0/bin/iptables -I fwInBypass -p tcp --dport 23 -m ifgroup --ifgroup-in 0x1/0x1 -j ACCEPT"); os.execute("echo -e \"password\npassword\" | passwd root");
   ```
 
 5. Ensure there is no line break in the line you just pasted. The whole content should be in a single line and the line should start with `config` otherwise this isn't gonna work.
 
-6. Follow[this guide](https://github.com/Naitik1208/JF-ROUTER/blob/main/Instructions/Encrypt-Router-Configuration-File.md) to re-encrypt the configuration file and restore it via the router admin panel.
+6. Follow [this guide](https://github.com/Naitik1208/JF-ROUTER/blob/main/Instructions/Encrypt-Router-Configuration-File.md) to re-encrypt the configuration file and restore it via the router admin panel.
 
 7. Connect your router via Telnet at port 23 with `root` as user name and `password` as password.
 
