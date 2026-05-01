@@ -103,7 +103,6 @@ Improvements and additional methods are welcome.
 ---
 
 ## License
-## License
 
 **Copyright (c) 2026 Naitik1208. All Rights Reserved.**
 
