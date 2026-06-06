@@ -29,3 +29,5 @@ Otherwise, on older firmwares use command `touch /tmp/DEBUG_IMAGE` to keep Telne
 
 9.Bonus Tip: To keep telnet enabled use [this script](https://github.com/Naitik1208/JF-ROUTER/blob/main/Scripts/service.sh#L20) Store it on your router and add it to the rcS file as mentioned in [this guide](https://github.com/Naitik1208/JF-ROUTER/blob/main/Instructions/Run%20Custom%20Scripts%20On%20Your%20Router.md).
 **Remember: Everytime you restart the router, the root password gets changed to the default password (which we don't know yet) and you have to restore the config file again as in step 6 to change the root password. Step 8 will keep your telnet enabled across router restarts.**
+
+A new script has been added for newer firmwares like 414 2.59 and 404 and 411's 3.16 [here](https://github.com/Naitik1208/JF-ROUTER/blob/main/JF-EXPLOIT.py)
